@@ -45,7 +45,7 @@ class GenereClassBody extends StatelessWidget {
                   color: Colors.lightBlueAccent,
                   child: ListTile(
                     onTap: () async {
-//                      var url = "https://api.themoviedb.org/3/movie/top_rated?api_key=b3b610a516648016aed5518355a08604&language=en-US&page=1";
+//                      var url = "https://api.themoviedb.org/3/movie/top_rated?api_key=''&language=en-US&page=1";
 //                      var recordData = await service(url);
                       Navigator.push(context, MaterialPageRoute(
                           builder: (context) => MovieClass(record, type)
@@ -88,7 +88,7 @@ class MoviesBodyClass extends State<MovieClass> {
   int page = 1;
   // mocking a network call
   Future<List<dynamic>> pageData(int previousCount) async {
-    final url = 'https://api.themoviedb.org/3/discover/' + type +'?api_key=b3b610a516648016aed5518355a08604&with_genres=' + this.record['id'].toString() + '&page=' + page.toString();
+    final url = 'https://api.themoviedb.org/3/discover/' + type +'?api_key=''&with_genres=' + this.record['id'].toString() + '&page=' + page.toString();
     print(url);
     var respons = await http.get(url);
     print("---------------------------------");
